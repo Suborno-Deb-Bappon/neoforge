@@ -1,0 +1,24 @@
+[project]
+name = "neoforge"
+version = "0.1.0"
+description = "neoforge using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.134.0,<1.0.0",
+    "gradio>=5.35.0",
+]
+
+[project.scripts]
+neoforge = "neoforge.main:run"
+run_crew = "neoforge.main:run"
+train = "neoforge.main:train"
+replay = "neoforge.main:replay"
+test = "neoforge.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
