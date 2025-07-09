@@ -18,9 +18,7 @@
 
 ## 🗂️ Project Structure
 
-## 🗂️ Project Structure
-
-![Neora Project Structure](./pstructure.png)
+![Neora Project Structure](./pstructure.PNG)
 
 ---
 
