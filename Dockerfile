@@ -1,18 +1,21 @@
-# Use a slim base image
+# Use a slim base image with Python 3.11
 FROM python:3.11-slim
 
-# Set working directory
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy project files into container
+# Copy everything into the container
 COPY . .
 
 # Install Python dependencies
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
-# Expose default Gradio port
+# Set Pythonpath to recognize 'src' as a root package directory
+ENV PYTHONPATH=/app/src
+
+# Expose Gradio default port
 EXPOSE 7860
 
-# Run your app
+# Run the application
 CMD ["python", "src/neoforge/main.py"]
