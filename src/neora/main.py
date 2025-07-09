@@ -5,7 +5,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 load_dotenv()
 
-from neoforge.crew import EngineeringTeam
+from neora.crew import EngineeringTeam
 
 OUTPUT_DIR = "output"
 
@@ -36,7 +36,7 @@ def run_engineering_process(requirements: str):
 
 # Gradio UI
 with gr.Blocks() as demo:
-    gr.Markdown("## NeoForge \nEnter your requirements and let the NeoForge work.")
+    gr.Markdown("## Neora \nEnter your requirements and let the Neora work.")
 
     with gr.Row():
         input_box = gr.Textbox(
@@ -48,7 +48,7 @@ with gr.Blocks() as demo:
     result_box = gr.Textbox(label="Result Summary", lines=10)
     download_link = gr.File(label="Download Output ZIP")
 
-    run_button = gr.Button("Run NeoForge")
+    run_button = gr.Button("Run Neora")
 
     run_button.click(
         fn=run_engineering_process,
