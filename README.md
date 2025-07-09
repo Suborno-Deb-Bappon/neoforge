@@ -1,54 +1,76 @@
-# neora Crew
+# Neora
 
-Welcome to the Neoforge Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+**Neora** is an **Autonomous Multi-Agent System** that transforms software requirements into **production-ready backend modules, frontend UIs, and unit tests**. It leverages **CrewAI** for multi-agent orchestration and **Gradio** for UI generation, empowering developers to rapidly prototype and automate the creation of entire software stacks.
 
-## Installation
+---
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+## ✨ Features
 
-First, if you haven't already, install uv:
+- 🤖 Multi-agent collaboration using [CrewAI](https://docs.crewai.com/)
+- 🧠 Task orchestration from human-readable YAML definitions
+- 🎨 Automatic frontend UI generation with [Gradio](https://www.gradio.app/)
+- 🏗️ Backend module scaffolding (Flask/Django-compatible structure)
+- ✅ Built-in unit test generation
+- ⚙️ Custom tools integration (e.g., for API calls, code templates)
+- 🔄 Fully extensible for custom workflows
 
-```bash
-pip install uv
-```
+---
 
-Next, navigate to your project directory and install the dependencies:
+## 🗂️ Project Structure
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+## 🗂️ Project Structure
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+![Neora Project Structure](pstructure.png)
 
-- Modify `src/neoforge/config/agents.yaml` to define your agents
-- Modify `src/neoforge/config/tasks.yaml` to define your tasks
-- Modify `src/neoforge/crew.py` to add your own logic, tools and specific args
-- Modify `src/neoforge/main.py` to add custom inputs for your agents and tasks
+---
 
-## Running the Project
+## 🚀 Getting Started
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+### 1. Clone the Repository
 
 ```bash
-$ crewai run
+git clone https://github.com/yourusername/neora.git
+cd neora
 ```
 
-This command initializes the neoforge Crew, assembling the agents and assigning them tasks as defined in your configuration.
+### 2. Create a Virtual Environment
+```
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+### 3. Install Dependencies
+```
+pip install -r requirements.txt
+```
 
-## Understanding Your Crew
+### 4. Run the Application
+```
+python src/neora/main.py
+```
 
-The neoforge Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+## 🧩 Configuration
+Neora is configured using two YAML files:
 
-## Support
+    - config/agents.yaml: Defines the autonomous agents (roles, tools, goals).
 
-For support, questions, or feedback regarding the Neoforge Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+    - config/tasks.yaml: Defines task flow and orchestration logic.
 
-Let's create wonders together with the power and simplicity of crewAI.
+Update these files to reflect your software requirements and custom logic.
+
+## 🧪 Running Tests
+```bash
+pytest tests/
+```
+
+## 🐳 Docker Usage
+Build and run Neora inside a container:
+```
+docker build -t neora .
+docker run -it neora
+```
+## 📦 Packaging
+Neora follows standard Python packaging structure using pyproject.toml.
+
+## 🙋‍♂️ Contributing
+PRs are welcome! Please open an issue first to discuss your feature idea or bug fix.
